@@ -1,0 +1,14 @@
+C:\Users\disrct\Desktop\Projeto\Enter-the-Boschium-2077\Game\bin\Debug\net7.0-windows\Game.exe
+C:\Users\disrct\Desktop\Projeto\Enter-the-Boschium-2077\Game\bin\Debug\net7.0-windows\Game.deps.json
+C:\Users\disrct\Desktop\Projeto\Enter-the-Boschium-2077\Game\bin\Debug\net7.0-windows\Game.runtimeconfig.json
+C:\Users\disrct\Desktop\Projeto\Enter-the-Boschium-2077\Game\bin\Debug\net7.0-windows\Game.dll
+C:\Users\disrct\Desktop\Projeto\Enter-the-Boschium-2077\Game\bin\Debug\net7.0-windows\Game.pdb
+C:\Users\disrct\Desktop\Projeto\Enter-the-Boschium-2077\Game\obj\Debug\net7.0-windows\Game.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\disrct\Desktop\Projeto\Enter-the-Boschium-2077\Game\obj\Debug\net7.0-windows\Game.AssemblyInfoInputs.cache
+C:\Users\disrct\Desktop\Projeto\Enter-the-Boschium-2077\Game\obj\Debug\net7.0-windows\Game.AssemblyInfo.cs
+C:\Users\disrct\Desktop\Projeto\Enter-the-Boschium-2077\Game\obj\Debug\net7.0-windows\Game.csproj.CoreCompileInputs.cache
+C:\Users\disrct\Desktop\Projeto\Enter-the-Boschium-2077\Game\obj\Debug\net7.0-windows\Game.dll
+C:\Users\disrct\Desktop\Projeto\Enter-the-Boschium-2077\Game\obj\Debug\net7.0-windows\refint\Game.dll
+C:\Users\disrct\Desktop\Projeto\Enter-the-Boschium-2077\Game\obj\Debug\net7.0-windows\Game.pdb
+C:\Users\disrct\Desktop\Projeto\Enter-the-Boschium-2077\Game\obj\Debug\net7.0-windows\Game.genruntimeconfig.cache
+C:\Users\disrct\Desktop\Projeto\Enter-the-Boschium-2077\Game\obj\Debug\net7.0-windows\ref\Game.dll

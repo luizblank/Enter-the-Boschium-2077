@@ -4,11 +4,12 @@ using System.Drawing;
 
 public abstract class Entity
 {
-    public Graphics g;
-    public String Name;
-    public PointF Position;
-    public Animation Animation;
-    public List<RectangleF> Hitbox;
+    protected Graphics g;
+    public String Name { get; set; }
+    public PointF Position { get; set; }
+    public SizeF Size { get; set; }
+    public Animation Animation { get; set; }
+    public Hitbox Hitbox { get; set; }
 
     public Entity(Graphics g) {
         this.g = g;
@@ -18,4 +19,17 @@ public abstract class Entity
     public virtual void Spawn() {}
     public virtual void Move() {}
     public virtual void Destroy() {}
+    public virtual void OnHit() {}
+    public virtual void Draw()
+    {
+        Image sprite = Animation.Draw();
+        float scale = Math.Min(Size.Width / (float)sprite.Width, Size.Height / (float)sprite.Height);
+
+        g.DrawImage(sprite,
+            Position.X, Position.Y,
+            sprite.Width * scale,
+            sprite.Height * scale);
+
+        Animation = Animation.NextFrame();
+    }
 }

@@ -1,11 +1,14 @@
+using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 public abstract class App
 {
-    Bitmap bmp = null;
-    Graphics g = null;
-    int frame = 0;
+    protected Bitmap bmp = null;
+    protected Graphics g = null;
+    protected int frame = 0;
+    protected PointF cursor = PointF.Empty;
 
     public void Run()
     {
@@ -28,17 +31,29 @@ public abstract class App
             Controls = { pb }
         };
 
+        pb.MouseMove += (o, e) => {
+            this.cursor = e.Location;
+
+            this.OnMouseMove(o, e);
+        };
+
         form.Load += delegate
         {
             bmp = new Bitmap(pb.Width, pb.Height);
             pb.Image = bmp;
 
             g = Graphics.FromImage(bmp);
+            g.InterpolationMode = InterpolationMode.NearestNeighbor;
             g.Clear(Color.DarkGray);
             pb.Refresh();
 
             this.Open();
             timer.Start();
+        };
+
+        form.KeyDown += (o, e) =>
+        {
+            this.OnKeyDown(o, e);
         };
 
         timer.Tick += delegate
@@ -57,6 +72,10 @@ public abstract class App
     public virtual void Open() {}
 
     public virtual void Close() {}
+
+    public virtual void OnMouseMove(Object o, MouseEventArgs e) {}
+
+    public virtual void OnKeyDown(Object o, KeyEventArgs e) {}
 
     public abstract void OnFrame();
 }
