@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "1Y1iklpnEmP74/gyp0o5hnrq4XouIwNY/XoEVYkNaOeRCOaQpoCMQcgR1+o4pF0t7OK/A7yyJwvtTZU+E4tXiA==",
+  "dgSpecHash": "FPVSNWYOEuAQjB5dA4t3BU+d4F3UNlSrlcirTIgZE00MXeeGV0VGpwfwvjhJDcG7DcgGb52Iw5b966YZIBhB7Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\disrct\\Desktop\\Projeto\\Enter-the-Boschium-2077\\Game\\Game.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\luisg\\OneDrive\\Documentos\\MeusProgramas\\Enter-the-Boschium-2077\\Game\\Game.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\luisg\\.nuget\\packages\\microsoft.netcore.app.ref\\7.0.15\\microsoft.netcore.app.ref.7.0.15.nupkg.sha512",
+    "C:\\Users\\luisg\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\7.0.15\\microsoft.windowsdesktop.app.ref.7.0.15.nupkg.sha512",
+    "C:\\Users\\luisg\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\7.0.15\\microsoft.aspnetcore.app.ref.7.0.15.nupkg.sha512",
+    "C:\\Users\\luisg\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\7.0.15\\microsoft.netcore.app.host.win-x64.7.0.15.nupkg.sha512"
+  ],
   "logs": []
 }

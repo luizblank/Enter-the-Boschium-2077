@@ -5,6 +5,7 @@ using System.Windows.Forms;
 
 public abstract class App
 {
+    protected Form form = null;
     protected Bitmap bmp = null;
     protected Graphics g = null;
     protected int frame = 0;
@@ -24,7 +25,7 @@ public abstract class App
             Interval = 10,
         };
 
-        var form = new Form
+        this.form = new Form
         {
             WindowState = FormWindowState.Maximized,
             FormBorderStyle = FormBorderStyle.None,
@@ -56,6 +57,11 @@ public abstract class App
             this.OnKeyDown(o, e);
         };
 
+        form.KeyUp += (o, e) =>
+        {
+            this.OnKeyUp(o, e);
+        };
+
         timer.Tick += delegate
         {
             g.Clear(Color.DarkGray);
@@ -71,11 +77,13 @@ public abstract class App
 
     public virtual void Open() {}
 
-    public virtual void Close() {}
+    public virtual void Close() { }
 
     public virtual void OnMouseMove(Object o, MouseEventArgs e) {}
 
     public virtual void OnKeyDown(Object o, KeyEventArgs e) {}
+
+    public virtual void OnKeyUp(Object o, KeyEventArgs e) {}
 
     public abstract void OnFrame();
 }

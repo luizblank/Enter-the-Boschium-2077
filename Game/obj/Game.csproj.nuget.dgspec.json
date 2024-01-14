@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\disrct\\Desktop\\Projeto\\Enter-the-Boschium-2077\\Game\\Game.csproj": {}
+    "C:\\Users\\luisg\\OneDrive\\Documentos\\MeusProgramas\\Enter-the-Boschium-2077\\Game\\Game.csproj": {}
   },
   "projects": {
-    "C:\\Users\\disrct\\Desktop\\Projeto\\Enter-the-Boschium-2077\\Game\\Game.csproj": {
+    "C:\\Users\\luisg\\OneDrive\\Documentos\\MeusProgramas\\Enter-the-Boschium-2077\\Game\\Game.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\disrct\\Desktop\\Projeto\\Enter-the-Boschium-2077\\Game\\Game.csproj",
+        "projectUniqueName": "C:\\Users\\luisg\\OneDrive\\Documentos\\MeusProgramas\\Enter-the-Boschium-2077\\Game\\Game.csproj",
         "projectName": "Game",
-        "projectPath": "C:\\Users\\disrct\\Desktop\\Projeto\\Enter-the-Boschium-2077\\Game\\Game.csproj",
-        "packagesPath": "C:\\Users\\disrct\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\disrct\\Desktop\\Projeto\\Enter-the-Boschium-2077\\Game\\obj\\",
+        "projectPath": "C:\\Users\\luisg\\OneDrive\\Documentos\\MeusProgramas\\Enter-the-Boschium-2077\\Game\\Game.csproj",
+        "packagesPath": "C:\\Users\\luisg\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\luisg\\OneDrive\\Documentos\\MeusProgramas\\Enter-the-Boschium-2077\\Game\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\disrct\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\luisg\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0-windows"
@@ -48,6 +48,24 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[7.0.15, 7.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[7.0.15, 7.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[7.0.15, 7.0.15]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[7.0.15, 7.0.15]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -56,7 +74,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.405\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

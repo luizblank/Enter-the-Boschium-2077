@@ -14,12 +14,12 @@ public class Marcos : Entity
                 15, 22
             )
         };
-
         this.Hitbox = new Hitbox(rectangles);
+
         this.Size = new SizeF(100, 100);
         this.Position = new PointF(
-            position.X - (Size.Width / 2),
-            position.Y - (Size.Height / 2)
+            position.X,
+            position.Y
         );
     }
 }

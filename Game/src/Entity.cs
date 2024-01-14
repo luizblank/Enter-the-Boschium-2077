@@ -25,10 +25,9 @@ public abstract class Entity
         Image sprite = Animation.Draw();
         float scale = Math.Min(Size.Width / (float)sprite.Width, Size.Height / (float)sprite.Height);
 
-        g.DrawImage(sprite,
-            Position.X, Position.Y,
-            sprite.Width * scale,
-            sprite.Height * scale);
+        Size size = new Size((int)(sprite.Width * scale), (int)(sprite.Height * scale));
+
+        g.DrawOnCam(sprite, Position, size);
 
         Animation = Animation.NextFrame();
     }
