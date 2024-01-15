@@ -5,6 +5,7 @@ using System.Windows.Forms;
 public class Game : App
 {
     public Player player = null;
+    public Bot bot = null;
     public List<Entity> entities = new List<Entity>();
     public string PlayerSpriteLocal = "Marcos/Marcos-sprites.png";
 
@@ -16,18 +17,29 @@ public class Game : App
     {
         Camera.Size = new SizeF(bmp.Width, bmp.Height);
 
-        var marcos = new Marcos(g, new PointF(400, 400));
+        var marcos = new Marcos(g, new PointF(350, 100));
         marcos.AddStaticAnimation(PlayerSpriteLocal);
         player = new Player(g)
         {
+            MaxLife = 10,
+            Life = 10,
             entity = marcos
         };
         camOn = marcos;
 
-        var hamilton = new Marcos(g, new PointF(400, 400));
+        var hamilton = new HamiltonBotEntity(g, new PointF(300, 400));
         hamilton.AddStaticAnimation("Hamilton bot/Hamilton-bot-sprites.png");
         entities.Add(hamilton);
+
         entities.Add(marcos);
+
+        var damagedbot = new DamagedBotEntity(g, new PointF(500, 500));
+        damagedbot.AddStaticAnimation("Damaged bot/Damaged-bot-sprites.png");
+        entities.Add(damagedbot);
+        bot = new DamagedBot(g)
+        {
+            entity = damagedbot
+        };
     }
 
     public override void OnFrame()
@@ -35,6 +47,7 @@ public class Game : App
         camOn.CamOnEntity();
 
         player.Move(playerX, playerY);
+        bot.OnFrame(player);
 
         foreach (var entity in entities)
         {

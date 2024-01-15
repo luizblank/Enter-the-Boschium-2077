@@ -13,11 +13,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\disrct\\Desktop\\Projeto\\Enter-the-Boschium-2077\\Game\\Game.csproj",
       "projectName": "Game",
       "projectPath": "C:\\Users\\disrct\\Desktop\\Projeto\\Enter-the-Boschium-2077\\Game\\Game.csproj",
       "packagesPath": "C:\\Users\\disrct\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\disrct\\Desktop\\Projeto\\Enter-the-Boschium-2077\\Game\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\disrct\\Desktop\\Enter-the-Boschium-2077\\Game\\Game.csproj",
+      "projectName": "Game",
+      "projectPath": "C:\\Users\\disrct\\Desktop\\Enter-the-Boschium-2077\\Game\\Game.csproj",
+      "packagesPath": "C:\\Users\\disrct\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\disrct\\Desktop\\Enter-the-Boschium-2077\\Game\\obj\\",
+>>>>>>> 098a74dcc106ed7c2ac776168f772bf413e68928
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\disrct\\AppData\\Roaming\\NuGet\\NuGet.Config"
