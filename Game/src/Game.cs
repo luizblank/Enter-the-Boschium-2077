@@ -7,7 +7,7 @@ public class Game : App
     public Player player = null;
     public Bot bot = null;
     public List<Entity> entities = new List<Entity>();
-    public string PlayerSpriteLocal = "Marcos/Marcos-sprites.png";
+    public string PlayerSpriteLocal = "marcos/marcos-sprites-old.png";
 
     private Entity camOn = null;
     private Walk playerX = 0;
@@ -27,18 +27,14 @@ public class Game : App
         };
         camOn = marcos;
 
-        var hamilton = new HamiltonBotEntity(g, new PointF(300, 400));
-        hamilton.AddStaticAnimation("Hamilton bot/Hamilton-bot-sprites.png");
-        entities.Add(hamilton);
-
         var hamilton2 = new HamiltonBotEntity(g, new PointF(300, 400));
-        hamilton2.AddWalkingAnimation("Hamilton bot/Hamilton-bot-sprites.png");
+        hamilton2.AddWalkingAnimation("hamilton-bot/hamilton-bot-sprites-new.png");
         entities.Add(hamilton2);
 
         entities.Add(marcos);
 
         var damagedbot = new DamagedBotEntity(g, new PointF(500, 500));
-        damagedbot.AddWalkingAnimation("Damaged bot/Damaged-bot-sprites.png");
+        damagedbot.AddWalkingAnimation("damaged-bot/damaged-bot-sprites.png");
         entities.Add(damagedbot);
         bot = new DamagedBot(g)
         {

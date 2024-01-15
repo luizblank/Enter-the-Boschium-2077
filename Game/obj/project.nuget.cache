@@ -1,15 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1Y1iklpnEmP74/gyp0o5hnrq4XouIwNY/XoEVYkNaOeRCOaQpoCMQcgR1+o4pF0t7OK/A7yyJwvtTZU+E4tXiA==",
+  "dgSpecHash": "sTJzHg6AD90/UXtBfOkxZXuBfGF4+GkcEwwJ2uJhA09M05zh3Zb+NT5ownFZroi/u2aYsTh8G+/JOWYK34NiLw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\disrct\\Desktop\\Projeto\\Enter-the-Boschium-2077\\Game\\Game.csproj",
+  "projectFilePath": "C:\\Users\\LuizU\\Desktop\\Enter-the-Boschium-2077\\Game\\Game.csproj",
   "expectedPackageFiles": [],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache C:\\Users\\disrct\\Desktop\\Projeto\\Enter-the-Boschium-2077\\Game\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

@@ -10,18 +10,18 @@ public class DamagedBot : Bot{
     public override void OnFrame(Player player) {
         if (this.entity.Position.Y > player.entity.Position.Y) {
             if (this.entity.Position.X > player.entity.Position.X)
-                this.entity.AddWalkingAnimation("Damaged bot/damaged-bot-sprites.png", Direction.TopLeft);
+                this.entity.AddWalkingAnimation("damaged-bot/damaged-bot-sprites.png", Direction.TopLeft);
             else
-                this.entity.AddWalkingAnimation("Damaged bot/damaged-bot-sprites.png", Direction.TopRight);
+                this.entity.AddWalkingAnimation("damaged-bot/damaged-bot-sprites.png", Direction.TopRight);
         } else {
             if (this.entity.Position.X > player.entity.Position.X)
-                this.entity.AddWalkingAnimation("Damaged bot/damaged-bot-sprites.png", Direction.BottomLeft);
+                this.entity.AddWalkingAnimation("damaged-bot/damaged-bot-sprites.png", Direction.BottomLeft);
             else
-                this.entity.AddWalkingAnimation("Damaged bot/damaged-bot-sprites.png", Direction.BottomRight);
+                this.entity.AddWalkingAnimation("damaged-bot/damaged-bot-sprites.png", Direction.BottomRight);
         }
         if ((this.entity.Position.Y == player.entity.Position.Y && this.entity.Position.X == player.entity.Position.X))
         {
-            this.entity.AddStaticAnimation("Damaged bot/damaged-bot-sprites.png", Direction.BottomLeft);
+            this.entity.AddStaticAnimation("damaged-bot/damaged-bot-sprites.png", Direction.BottomLeft);
         }
 
 
