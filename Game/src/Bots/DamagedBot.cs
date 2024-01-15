@@ -10,15 +10,20 @@ public class DamagedBot : Bot{
     public override void OnFrame(Player player) {
         if (this.entity.Position.Y > player.entity.Position.Y) {
             if (this.entity.Position.X > player.entity.Position.X)
-                this.entity.AddStaticAnimation("Damaged bot/damaged-bot-sprites.png", Direction.TopLeft);
+                this.entity.AddWalkingAnimation("Damaged bot/damaged-bot-sprites.png", Direction.TopLeft);
             else
-                this.entity.AddStaticAnimation("Damaged bot/damaged-bot-sprites.png", Direction.TopRight);
+                this.entity.AddWalkingAnimation("Damaged bot/damaged-bot-sprites.png", Direction.TopRight);
         } else {
             if (this.entity.Position.X > player.entity.Position.X)
-                this.entity.AddStaticAnimation("Damaged bot/damaged-bot-sprites.png", Direction.BottomLeft);
+                this.entity.AddWalkingAnimation("Damaged bot/damaged-bot-sprites.png", Direction.BottomLeft);
             else
-                this.entity.AddStaticAnimation("Damaged bot/damaged-bot-sprites.png", Direction.BottomRight);
+                this.entity.AddWalkingAnimation("Damaged bot/damaged-bot-sprites.png", Direction.BottomRight);
         }
+        if ((this.entity.Position.Y == player.entity.Position.Y && this.entity.Position.X == player.entity.Position.X))
+        {
+            this.entity.AddStaticAnimation("Damaged bot/damaged-bot-sprites.png", Direction.BottomLeft);
+        }
+
 
         this.entity.Position = new PointF(
             (1 - speed) * this.entity.Position.X + speed * player.entity.Position.X,

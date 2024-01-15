@@ -31,10 +31,14 @@ public class Game : App
         hamilton.AddStaticAnimation("Hamilton bot/Hamilton-bot-sprites.png");
         entities.Add(hamilton);
 
+        var hamilton2 = new HamiltonBotEntity(g, new PointF(300, 400));
+        hamilton2.AddWalkingAnimation("Hamilton bot/Hamilton-bot-sprites.png");
+        entities.Add(hamilton2);
+
         entities.Add(marcos);
 
         var damagedbot = new DamagedBotEntity(g, new PointF(500, 500));
-        damagedbot.AddStaticAnimation("Damaged bot/Damaged-bot-sprites.png");
+        damagedbot.AddWalkingAnimation("Damaged bot/Damaged-bot-sprites.png");
         entities.Add(damagedbot);
         bot = new DamagedBot(g)
         {
@@ -122,16 +126,22 @@ public class Game : App
 
     public override void OnMouseMove(object o, MouseEventArgs e)
     {
+        Direction newDirection = Direction.BottomLeft;
         if (this.cursor.Y > player.entity.RelativePosition().Y) {
             if (this.cursor.X > player.entity.RelativePosition().X)
-                player.entity.AddStaticAnimation(PlayerSpriteLocal, Direction.BottomRight);
+                newDirection = Direction.BottomRight;
             else
-                player.entity.AddStaticAnimation(PlayerSpriteLocal, Direction.BottomLeft);
+                newDirection = Direction.BottomLeft;
         } else {
             if (this.cursor.X > player.entity.RelativePosition().X)
-                player.entity.AddStaticAnimation(PlayerSpriteLocal, Direction.TopRight);
+                newDirection = Direction.TopRight;
             else
-                player.entity.AddStaticAnimation(PlayerSpriteLocal, Direction.TopLeft);
+                newDirection = Direction.TopLeft;
         }
+
+        if ((int)playerX != 0 || (int)playerY != 0)
+            player.entity.AddWalkingAnimation(PlayerSpriteLocal, newDirection);
+        else
+            player.entity.AddStaticAnimation(PlayerSpriteLocal, newDirection);
     }
 }

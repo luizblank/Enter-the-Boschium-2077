@@ -4,7 +4,7 @@ public class Walking : Animation
 {
     public Image sprite = null;
     public Image rotated = null;
-    public float speed = 0.7f;
+    public float speed = .7f;
     public Walk direction = Walk.Front;
     private float angle = 0;
 
@@ -16,6 +16,11 @@ public class Walking : Animation
             direction = Walk.Back;
         else if (angle < -5)
             direction = Walk.Front;
+
+        if (angle < speed && angle > -speed && Frame > 0)
+            return this.Skip();
+
+        Frame++;
         return this;
     }
 
@@ -25,17 +30,17 @@ public class Walking : Animation
         PointF camPosition = this.PositionOnCam(position);
 
         g.TranslateTransform(
-            camPosition.X - (float)relativeSize.Width / 2,
-            camPosition.Y
+            camPosition.X + (float)relativeSize.Width / 2,
+            camPosition.Y + (float)relativeSize.Height
         );
         g.RotateTransform(angle);
         g.TranslateTransform(
-            -(camPosition.X - (float)relativeSize.Width / 2),
-            -(camPosition.Y)
+            -(camPosition.X + (float)relativeSize.Width / 2),
+            -(camPosition.Y + (float)relativeSize.Height)
         );
         g.DrawImage(sprite,
-            camPosition.X - relativeSize.Width,
-            camPosition.Y - relativeSize.Height,
+            camPosition.X,
+            camPosition.Y,
             relativeSize.Width, 
             relativeSize.Height);
     
@@ -48,6 +53,7 @@ public class Walking : Animation
         {
             sprite = this.sprite,
             Frame = 0,
+            angle = this.angle,
             direction = this.direction
         };
     }
