@@ -12,35 +12,28 @@ public static class AnimationBuilder
 
         return frame;
     }
-    public static void BottomRight(this Entity entity, String local)
+
+    public static void AddAnimation(this Entity entity, Animation animation)
     {
-        Image sprite = Bitmap.FromFile("src/Sprites/" + local);
-        entity.Animation = new Static() {
-            sprite = sprite.Cut(0),
-        };
+        if (entity.Animation is null)
+            entity.Animation = animation;
+        else
+            entity.Animation.Next = animation;
     }
 
-    public static void BottomLeft(this Entity entity, String local)
+    public static void AddStaticAnimation(this Entity entity, String local, Direction direction = Direction.BottomLeft)
     {
         Image sprite = Bitmap.FromFile("src/Sprites/" + local);
-        entity.Animation = new Static() {
-            sprite = sprite.Cut(1),
-        };
+        entity.AddAnimation(new Static() {
+            sprite = sprite.Cut((int) direction),
+        });
     }
 
-    public static void TopLeft(this Entity entity, String local)
+    public static void AddWalkingAnimation(this Entity entity, String local, Direction direction = Direction.BottomLeft)
     {
         Image sprite = Bitmap.FromFile("src/Sprites/" + local);
-        entity.Animation = new Static() {
-            sprite = sprite.Cut(2),
-        };
-    }
-
-    public static void TopRight(this Entity entity, String local)
-    {
-        Image sprite = Bitmap.FromFile("src/Sprites/" + local);
-        entity.Animation = new Static() {
-            sprite = sprite.Cut(3),
-        };
+        entity.AddAnimation(new Walking() {
+            sprite = sprite.Cut((int) direction),
+        });
     }
 }

@@ -9,15 +9,15 @@ public class Game : App
     public string PlayerSpriteLocal = "Marcos/Marcos-sprites.png";
 
     private Entity camOn = null;
-    private Direction playerX = 0;
-    private Direction playerY = 0;
+    private Walk playerX = 0;
+    private Walk playerY = 0;
 
     public override void Open()
     {
         Camera.Size = new SizeF(bmp.Width, bmp.Height);
 
         var marcos = new Marcos(g, new PointF(400, 400));
-        marcos.BottomLeft(PlayerSpriteLocal);
+        marcos.AddStaticAnimation(PlayerSpriteLocal);
         entities.Add(marcos);
         player = new Player(g)
         {
@@ -26,7 +26,7 @@ public class Game : App
         camOn = marcos;
 
         var hamilton = new Marcos(g, new PointF(400, 400));
-        hamilton.BottomLeft("Hamilton bot/Hamilton-bot-sprites.png");
+        hamilton.AddStaticAnimation("Hamilton bot/Hamilton-bot-sprites.png");
         entities.Add(hamilton);
     }
 
@@ -47,23 +47,24 @@ public class Game : App
         switch (e.KeyCode)
         {
             case Keys.Enter:
+                Camera.speed = 0.15f;
                 camOn = entities[1];
                 break;
 
             case Keys.A:
-                playerX = Direction.Back;
+                playerX = Walk.Back;
                 break;
 
             case Keys.D:
-                playerX = Direction.Front;
+                playerX = Walk.Front;
                 break;
 
             case Keys.W:
-                playerY = Direction.Back;
+                playerY = Walk.Back;
                 break;
 
             case Keys.S:
-                playerY = Direction.Front;
+                playerY = Walk.Front;
                 break;
 
             case Keys.Add:
@@ -89,19 +90,19 @@ public class Game : App
         switch (e.KeyCode)
         {
             case Keys.A:
-                playerX = Direction.Stop;
+                playerX = Walk.Stop;
                 break;
 
             case Keys.D:
-                playerX = Direction.Stop;
+                playerX = Walk.Stop;
                 break;
 
             case Keys.W:
-                playerY = Direction.Stop;
+                playerY = Walk.Stop;
                 break;
 
             case Keys.S:
-                playerY = Direction.Stop;
+                playerY = Walk.Stop;
                 break;
         }
     }
@@ -110,14 +111,14 @@ public class Game : App
     {
         if (this.cursor.Y > player.entity.RelativePosition().Y) {
             if (this.cursor.X > player.entity.RelativePosition().X)
-                player.entity.BottomRight(PlayerSpriteLocal);
+                player.entity.AddStaticAnimation(PlayerSpriteLocal, Direction.BottomRight);
             else
-                player.entity.BottomLeft(PlayerSpriteLocal);
+                player.entity.AddStaticAnimation(PlayerSpriteLocal, Direction.BottomLeft);
         } else {
             if (this.cursor.X > player.entity.RelativePosition().X)
-                player.entity.TopRight(PlayerSpriteLocal);
+                player.entity.AddStaticAnimation(PlayerSpriteLocal, Direction.TopRight);
             else
-                player.entity.TopLeft(PlayerSpriteLocal);
+                player.entity.AddStaticAnimation(PlayerSpriteLocal, Direction.TopLeft);
         }
     }
 }

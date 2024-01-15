@@ -25,7 +25,6 @@ public class MarcosSpin : Animation
     {
         return new MarcosSpin() {
             Frame = 0,
-            Next = this.Next,
         };
     }
 }

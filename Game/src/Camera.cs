@@ -7,7 +7,7 @@ public static class Camera
     public static PointF Location { get; set; }
     public static SizeF Size { get; set; }
     public static float Zoom { get; set; } = 1;
-    public static float speed { get; set; } = 1;
+    public static float speed { get; set; } = 0.9f;
 
     public static void CamOnEntity(this Entity entity, bool motion = true)
     {

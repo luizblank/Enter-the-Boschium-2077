@@ -6,7 +6,9 @@ public class Static : Animation
 
     public override Animation NextFrame()
     {
-        return this;
+        if (Next is null)
+            return this;
+        return Next;
     }
 
     public override Image Draw()
@@ -19,7 +21,6 @@ public class Static : Animation
         return new Static() {
             sprite = this.sprite,
             Frame = 0,
-            Next = this.Next,
         };
     }
 }

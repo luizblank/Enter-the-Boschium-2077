@@ -4,6 +4,6 @@ public class Player : Mob
 {
     public Player(Graphics g) : base(g) {}
 
-    public void Move(Direction x, Direction y)
+    public void Move(Walk x, Walk y)
         => entity.Position = new PointF(entity.Position.X + speed * (int)x, entity.Position.Y + speed * (int)y);
 }
