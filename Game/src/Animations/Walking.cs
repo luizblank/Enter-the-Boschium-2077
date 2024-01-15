@@ -3,30 +3,43 @@ using System.Drawing;
 public class Walking : Animation
 {
     public Image sprite = null;
-    public int speed = 1;
+    public Image rotated = null;
+    public float speed = 0.7f;
     public Walk direction = Walk.Front;
-    private int angle = 0;
+    private float angle = 0;
 
     public override Animation NextFrame()
     {
-        Bitmap bitmap = new Bitmap(sprite);
-        Graphics g = Graphics.FromImage(bitmap);
+        angle += speed * (int)direction;
 
-        g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
-        g.TranslateTransform((float)sprite.Width / 2, (float)sprite.Height);
-
-        g.RotateTransform(angle);
-
-        g.TranslateTransform(-(float)sprite.Width / 2, -(float)sprite.Height);
-        g.DrawImage(sprite, 0, 0, sprite.Width, sprite.Height);
-
-        sprite = bitmap;
+        if (angle > 5)
+            direction = Walk.Back;
+        else if (angle < -5)
+            direction = Walk.Front;
         return this;
     }
 
-    public override Image Draw()
+    public override void Draw(Graphics g, PointF position, SizeF size)
     {
-        return sprite;
+        Size relativeSize = this.RelativeSize(sprite, size);
+        PointF camPosition = this.PositionOnCam(position);
+
+        g.TranslateTransform(
+            camPosition.X - (float)relativeSize.Width / 2,
+            camPosition.Y
+        );
+        g.RotateTransform(angle);
+        g.TranslateTransform(
+            -(camPosition.X - (float)relativeSize.Width / 2),
+            -(camPosition.Y)
+        );
+        g.DrawImage(sprite,
+            camPosition.X - relativeSize.Width,
+            camPosition.Y - relativeSize.Height,
+            relativeSize.Width, 
+            relativeSize.Height);
+    
+        g.ResetTransform();
     }
 
     public override Animation Clone()

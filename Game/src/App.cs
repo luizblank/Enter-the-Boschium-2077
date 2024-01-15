@@ -77,7 +77,7 @@ public abstract class App
 
     public virtual void Open() {}
 
-    public virtual void Close() { }
+    public virtual void Close() { this.form.Close(); }
 
     public virtual void OnMouseMove(Object o, MouseEventArgs e) {}
 

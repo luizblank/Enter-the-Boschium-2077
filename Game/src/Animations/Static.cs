@@ -11,9 +11,12 @@ public class Static : Animation
         return Next;
     }
 
-    public override Image Draw()
+    public override void Draw(Graphics g, PointF position, SizeF size)
     {
-        return sprite;
+        Size relativeSize = this.RelativeSize(sprite, size);
+        PointF camPosition = this.PositionOnCam(position);
+
+        g.DrawImage(sprite, camPosition.X, camPosition.Y, relativeSize.Width, relativeSize.Height);
     }
 
     public override Animation Clone()

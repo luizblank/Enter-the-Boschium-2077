@@ -18,7 +18,6 @@ public class Game : App
 
         var marcos = new Marcos(g, new PointF(400, 400));
         marcos.AddStaticAnimation(PlayerSpriteLocal);
-        entities.Add(marcos);
         player = new Player(g)
         {
             entity = marcos
@@ -28,6 +27,7 @@ public class Game : App
         var hamilton = new Marcos(g, new PointF(400, 400));
         hamilton.AddStaticAnimation("Hamilton bot/Hamilton-bot-sprites.png");
         entities.Add(hamilton);
+        entities.Add(marcos);
     }
 
     public override void OnFrame()
@@ -76,7 +76,7 @@ public class Game : App
                 break;
 
             case Keys.Escape:
-                this.form.Close();
+                this.Close();
                 break;
 
             default:

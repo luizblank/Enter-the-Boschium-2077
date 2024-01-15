@@ -22,12 +22,7 @@ public abstract class Entity
     public virtual void OnHit() {}
     public virtual void Draw()
     {
-        Image sprite = Animation.Draw();
-        float scale = Math.Min(Size.Width / (float)sprite.Width, Size.Height / (float)sprite.Height);
-
-        Size size = new Size((int)(sprite.Width * scale), (int)(sprite.Height * scale));
-
-        g.DrawOnCam(sprite, Position, size);
+        this.Animation.Draw(g, Position, Size);
 
         Animation = Animation.NextFrame();
     }
