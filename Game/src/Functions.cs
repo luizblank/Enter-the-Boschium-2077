@@ -28,4 +28,12 @@ public static class Functions
         => LinearInterpolation(A.X, A.Y, B.X, B.Y, t);
     public static PointF LinearInterpolation(this PointF A, float Bx, float By, double t)
         => LinearInterpolation(A.X, A.Y, Bx, By, t);
+
+    public static PointF PositionOnCam(PointF position)
+    {
+        float x = (position.X - Camera.Location.X) * Camera.Zoom;
+        float y = (position.Y - Camera.Location.Y) * Camera.Zoom;
+
+        return new PointF(x, y);
+    }
 }

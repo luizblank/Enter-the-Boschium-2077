@@ -15,7 +15,7 @@ public abstract class Entity
         this.g = g;
     }
 
-    public virtual void Interact() {}
+    public virtual void Interact(Mob mob) {}
     public virtual void Spawn() {}
     public virtual void Destroy() {}
     public virtual void OnHit() {}
