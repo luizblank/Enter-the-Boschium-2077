@@ -7,16 +7,16 @@ public class HamiltonBotEntity : Entity
     {
         this.Name = "Bolem Bot";
 
+        this.Size = new SizeF(100, 160);
         var rectangles = new List<RectangleF> {
             new RectangleF(
-                Size.Width - 9,
-                Size.Width - 16,
-                19, 32
+                0, 0,
+                Size.Width,
+                Size.Height
             )
         };
         this.Hitbox = new Hitbox(rectangles);
 
-        this.Size = new SizeF(140, 160);
         this.Position = new PointF(
             position.X,
             position.Y

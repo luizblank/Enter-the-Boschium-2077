@@ -29,4 +29,12 @@ public class Hitbox
             g.DrawRectangle(Pens.Red, rect);
         }
     }
+
+    public bool VerifyCollision(List<Rectangle> rectangles)
+    {
+        foreach (var rectangle in rectangles)
+        {
+            // continua a parada aqui
+        }
+    }
 }

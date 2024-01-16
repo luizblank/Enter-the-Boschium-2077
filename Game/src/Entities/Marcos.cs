@@ -10,7 +10,7 @@ public class Marcos : Entity
         this.Size = new SizeF(75, 100);
         var rectangles = new List<RectangleF> {
             new RectangleF(
-                0, 0,
+                -3, 0,
                 Size.Width,
                 Size.Height
             )

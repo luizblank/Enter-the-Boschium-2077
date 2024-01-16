@@ -49,7 +49,7 @@ public class Game : App
 
         player.OnFrame();
         bot.OnFrame(player);
-
+        
         foreach (var entity in entities)
         {
             entity.Draw();
