@@ -19,15 +19,15 @@ public class DamagedBot : Bot{
             else
                 this.entity.AddWalkingAnimation("damaged-bot/damaged-bot-sprites.png", Direction.BottomRight);
         }
-        if ((this.entity.Position.Y == player.entity.Position.Y && this.entity.Position.X == player.entity.Position.X))
+        if (this.entity.Position.Y == player.entity.Position.Y && this.entity.Position.X == player.entity.Position.X)
         {
             this.entity.AddStaticAnimation("damaged-bot/damaged-bot-sprites.png", Direction.BottomLeft);
         }
 
 
-        this.entity.Position = new PointF(
+        this.entity.Move(new PointF(
             (1 - speed) * this.entity.Position.X + speed * player.entity.Position.X,
             (1 - speed) * this.entity.Position.Y + speed * player.entity.Position.Y
-        );
+        ));
     }
 }

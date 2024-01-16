@@ -19,19 +19,10 @@ public static class Camera
             return;
         }
 
-        float dx = Location.X - x;
-        float dy = Location.Y - y;
-        float distance = (float)Math.Sqrt(dx * dx + dy * dy);
+        double distance = Location.Distance(x, y);
 
-        if (distance > 0)
-        {
-            float t = speed * (distance / (Camera.Size.Width / Zoom));
-            Location = new PointF(
-                (1 - t) * Location.X + t * x,
-                (1 - t) * Location.Y + t * y
-            );
-        }
-
+        double t = speed * (distance / (Camera.Size.Width / Zoom));
+        Location = Location.LinearInterpolation(x, y, t);
     }
 
     public static List<Entity> OnCam(this List<Entity> entities)
