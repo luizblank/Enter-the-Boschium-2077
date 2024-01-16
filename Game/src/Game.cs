@@ -35,7 +35,8 @@ public class Game : App
         entities.Add(damagedbot);
         bot = new DamagedBot(g)
         {
-            entity = damagedbot
+            entity = damagedbot,
+            speed = 0.005f
         };
 
         var guitar = new EletricGuitarEntity(g, new PointF(1000, 1000));

@@ -9,7 +9,7 @@ public abstract class Mob
     
     public float MaxLife;
     public float Life;
-    public int speed = 10;
+    public float speed = 10;
 
 
     protected Mob(Graphics g)

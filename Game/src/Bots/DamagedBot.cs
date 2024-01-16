@@ -1,7 +1,6 @@
 using System.Drawing;
 
 public class DamagedBot : Bot{
-    float speed = 0.005f;
     public DamagedBot(Graphics g) : base(g)
     {
         this.Damage = 3;
