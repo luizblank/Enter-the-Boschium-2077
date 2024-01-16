@@ -7,16 +7,16 @@ public class Marcos : Entity
     {
         this.Name = "Marcos";
 
+        this.Size = new SizeF(75, 100);
         var rectangles = new List<RectangleF> {
             new RectangleF(
-                Size.Width - 7,
-                Size.Width - 11,
-                15, 22
+                0, 0,
+                Size.Width,
+                Size.Height
             )
         };
         this.Hitbox = new Hitbox(rectangles);
 
-        this.Size = new SizeF(100, 100);
         this.Position = new PointF(
             position.X,
             position.Y

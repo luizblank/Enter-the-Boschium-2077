@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\disrct\\Desktop\\Projeto\\Enter-the-Boschium-2077\\Game\\Game.csproj",
+      "projectUniqueName": "C:\\Users\\disrct\\Desktop\\Enter-the-Boschium-2077\\Game\\Game.csproj",
       "projectName": "Game",
-      "projectPath": "C:\\Users\\disrct\\Desktop\\Projeto\\Enter-the-Boschium-2077\\Game\\Game.csproj",
+      "projectPath": "C:\\Users\\disrct\\Desktop\\Enter-the-Boschium-2077\\Game\\Game.csproj",
       "packagesPath": "C:\\Users\\disrct\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\disrct\\Desktop\\Projeto\\Enter-the-Boschium-2077\\Game\\obj\\",
+      "outputPath": "C:\\Users\\disrct\\Desktop\\Enter-the-Boschium-2077\\Game\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\disrct\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -65,13 +65,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.405\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache C:\\Users\\disrct\\Desktop\\Projeto\\Enter-the-Boschium-2077\\Game\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

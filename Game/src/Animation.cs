@@ -20,7 +20,10 @@ public abstract class Animation
     protected virtual Size RelativeSize(Image sprite, SizeF size)
     {
         float scale = Math.Min(size.Width / (float)sprite.Width, size.Height / (float)sprite.Height);
-        return new Size((int)(sprite.Width * scale), (int)(sprite.Height * scale));
+        return new Size(
+            (int)(sprite.Width * scale * Camera.Zoom),
+            (int)(sprite.Height * scale * Camera.Zoom)
+        );
     }
     protected virtual PointF PositionOnCam(PointF position)
     {
