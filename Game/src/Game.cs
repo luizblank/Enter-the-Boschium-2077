@@ -66,7 +66,7 @@ public class Game : App
         {
             case Keys.Enter:
                 Camera.speed = 0.15f;
-                camOn = entities[2];
+                camOn = entities[1];
                 break;
 
             case Keys.Add:

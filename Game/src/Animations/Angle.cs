@@ -14,7 +14,7 @@ public class Angle : Animation
     public override void Draw(Graphics g, PointF position, SizeF size)
     {
         Size relativeSize = this.RelativeSize(sprite, size);
-        PointF camPosition = this.PositionOnCam(position);
+        PointF camPosition = Functions.PositionOnCam(position);
 
         g.TranslateTransform(
             camPosition.X + (float)relativeSize.Width / 2,
