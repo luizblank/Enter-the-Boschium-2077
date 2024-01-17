@@ -25,6 +25,5 @@ public class DamagedBotEntity : Entity
 
     public override void OnHit(Entity entity)
     {
-        base.OnHit(entity);
     }
 }

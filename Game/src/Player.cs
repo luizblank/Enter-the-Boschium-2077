@@ -9,8 +9,16 @@ public class Player : Mob
     public Walk WalkX = Walk.Stop;
     public Walk WalkY = Walk.Stop;
 
+    public override void OnDestroy()
+    {
+        entity.AddAnimation(new MarcosDying());
+    }
+
     public override void OnFrame()
     {
+        if (Life <= 0)
+            return;
+
         this.Move();
         if (WalkX != Walk.Stop || WalkY != Walk.Stop)
             this.entity.AddWalkingAnimation(spriteLocal, direction);

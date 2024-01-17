@@ -3,7 +3,6 @@ using System.Drawing;
 public class Walking : Animation
 {
     public Image sprite = null;
-    public Image rotated = null;
     public float speed = .7f;
     public Walk direction = Walk.Front;
     private float angle = 0;

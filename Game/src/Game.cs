@@ -17,10 +17,10 @@ public class Game : App
         player = new Player(g)
         {
             MaxLife = 11,
-            Life = 11,
-            entity = marcos,
+            Life = 2,
             spriteLocal = "marcos/marcos-sprites-old.png",
         };
+        player.Set(marcos);
         camOn = marcos;
 
         var hamilton2 = new HamiltonBotEntity(g, new PointF(300, 400));
@@ -30,16 +30,14 @@ public class Game : App
         Entities.Add(marcos);
 
         var damagedbot = new DamagedBotEntity(g, new PointF(500, 500));
-        damagedbot.AddWalkingAnimation("damaged-bot/damaged-bot-sprites.png");
+        damagedbot.AddStaticAnimation("damaged-bot/damaged-bot-sprites.png");
         Entities.Add(damagedbot);
-        bot = new DamagedBot(g)
-        {
-            entity = damagedbot,
-            speed = 0.005f
-        };
+
+        bot = new DamagedBot(g);
+        bot.Set(damagedbot);
 
         var guitar = new EletricGuitarEntity(g, new PointF(1000, 1000));
-        guitar.Animation = new Angle() { sprite = Bitmap.FromFile("src/Sprites/mel-bot/mel-bot-playing.gif") };
+        guitar.Animation = new MelBotPlaying();
         Entities.Add(guitar);
 
         var life = new Life(g, player);
@@ -56,7 +54,9 @@ public class Game : App
         
         foreach (var entity in Entities.Get())
         {
-            entity.Draw();
+            entity.cooldown -= entity.cooldown > 0 ? 1 : 0;
+            if(entity.cooldown % 2 == 0)
+                entity.Draw();
         }
         GUI.Draw();
     }
