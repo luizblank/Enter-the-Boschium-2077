@@ -6,8 +6,6 @@ public class Game : App
 {
     public Player player = null;
     public Bot bot = null;
-    public List<Entity> entities = new List<Entity>();
-
     private Entity camOn = null;
 
     public override void Open()
@@ -26,13 +24,13 @@ public class Game : App
 
         var hamilton2 = new HamiltonBotEntity(g, new PointF(300, 400));
         hamilton2.AddWalkingAnimation("hamilton-bot/hamilton-bot-sprites-new.png");
-        entities.Add(hamilton2);
+        Entities.Add(hamilton2);
 
-        entities.Add(marcos);
+        Entities.Add(marcos);
 
         var damagedbot = new DamagedBotEntity(g, new PointF(500, 500));
         damagedbot.AddWalkingAnimation("damaged-bot/damaged-bot-sprites.png");
-        entities.Add(damagedbot);
+        Entities.Add(damagedbot);
         bot = new DamagedBot(g)
         {
             entity = damagedbot,
@@ -40,8 +38,8 @@ public class Game : App
         };
 
         var guitar = new EletricGuitarEntity(g, new PointF(1000, 1000));
-        guitar.Animation = new Angle() { sprite = Bitmap.FromFile("src/Sprites/Guns/electric-robotic-guitar.png") };
-        entities.Add(guitar);
+        guitar.Animation = new Angle() { sprite = Bitmap.FromFile("src/Sprites/mel-bot/mel-bot-playing.gif") };
+        Entities.Add(guitar);
     }
 
     public override void OnFrame()
@@ -50,8 +48,9 @@ public class Game : App
 
         player.OnFrame();
         bot.OnFrame(player);
-
-        foreach (var entity in entities)
+        Entities.VerifyCollision();
+        
+        foreach (var entity in Entities.Get())
         {
             entity.Draw();
         }
@@ -66,7 +65,7 @@ public class Game : App
         {
             case Keys.Enter:
                 Camera.speed = 0.15f;
-                camOn = entities[1];
+                camOn = Entities.Get(2);
                 break;
 
             case Keys.Add:

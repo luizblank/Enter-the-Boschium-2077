@@ -7,16 +7,16 @@ public class DamagedBotEntity : Entity
     {
         this.Name = "Damaged Bot";
 
+        this.Size = new SizeF(85, 110);
         var rectangles = new List<RectangleF> {
             new RectangleF(
-                Size.Width - 7,
-                Size.Width - 11,
-                15, 22
+                -3, 0,
+                Size.Width,
+                Size.Height
             )
         };
         this.Hitbox = new Hitbox(rectangles);
 
-        this.Size = new SizeF(110, 110);
         this.Position = new PointF(
             position.X,
             position.Y
