@@ -4,7 +4,7 @@ using System.Drawing.Drawing2D;
 
 public static class AnimationBuilder
 {
-    private static Bitmap Cut(this Image sprite, int index, int spritesQuant = 4)
+    public static Bitmap Cut(this Image sprite, int index, int spritesQuant = 4)
     {
         RectangleF rect = new RectangleF((sprite.Width / spritesQuant) * index, 0, sprite.Width / spritesQuant, sprite.Height);
 

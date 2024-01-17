@@ -10,6 +10,7 @@ public abstract class Entity
     public SizeF Size { get; set; }
     public Animation Animation { get; set; }
     public Hitbox Hitbox { get; set; }
+    public int damage { get; set; } = 1;
 
     public Entity(Graphics g) {
         this.g = g;
@@ -18,7 +19,7 @@ public abstract class Entity
     public virtual void Interact(Mob mob) {}
     public virtual void Spawn() {}
     public virtual void Destroy() {}
-    public virtual void OnHit() {}
+    public virtual void OnHit(Entity entity) {}
     public virtual void OnCollision(Entity entity) {}
     public virtual void Move(PointF position)
     {
