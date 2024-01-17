@@ -10,13 +10,14 @@ public class Game : App
 
     public override void Open()
     {
+        GUI.Size = new Size(bmp.Width, bmp.Height);
         Camera.Size = new SizeF(bmp.Width, bmp.Height);
 
         var marcos = new Marcos(g, new PointF(350, 100));
         player = new Player(g)
         {
-            MaxLife = 10,
-            Life = 10,
+            MaxLife = 11,
+            Life = 11,
             entity = marcos,
             spriteLocal = "marcos/marcos-sprites-old.png",
         };
@@ -39,6 +40,9 @@ public class Game : App
         var guitar = new EletricGuitarEntity(g, new PointF(1000, 1000));
         guitar.Animation = new Angle() { sprite = Bitmap.FromFile("src/Sprites/mel-bot/mel-bot-playing.gif") };
         Entities.Add(guitar);
+
+        var life = new Life(g, player);
+        GUI.Add(life);
     }
 
     public override void OnFrame()
@@ -53,6 +57,7 @@ public class Game : App
         {
             entity.Draw();
         }
+        GUI.Draw();
     }
 
     public override void OnKeyDown(object o, KeyEventArgs e)

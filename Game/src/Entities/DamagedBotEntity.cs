@@ -22,4 +22,9 @@ public class DamagedBotEntity : Entity
             position.Y
         );
     }
+
+    public override void OnHit(Entity entity)
+    {
+        base.OnHit(entity);
+    }
 }

@@ -51,6 +51,7 @@ public class Hitbox
                 );
                 if (entityARect.IntersectsWith(entityBRect))
                 {
+                    A.OnHit(B);
                     return true;
                 }
             }
