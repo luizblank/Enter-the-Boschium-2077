@@ -42,6 +42,10 @@ public class Game : App
 
         var life = new Life(g, player);
         GUI.Add(life);
+
+        var revolver = new RevolverEntity(g);
+        revolver.AddAnimation(new Revolver());
+        player.hands.Add(new Hand(player, revolver));
     }
 
     public override void OnFrame()
@@ -59,6 +63,7 @@ public class Game : App
                 entity.Draw();
         }
         GUI.Draw();
+        player.hands[0].Draw(cursor);
     }
 
     public override void OnKeyDown(object o, KeyEventArgs e)

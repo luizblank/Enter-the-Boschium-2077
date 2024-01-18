@@ -1,16 +1,27 @@
 using System.Drawing;
+using System.Windows.Forms;
 
 public class Hand
 {
-    public Mob mob { get; set; }
-    public Entity entity { get; set; }
+    public Mob Mob { get; set; }
+    public Entity Entity { get; set; }
+    public double Distance { get; set; }
 
-    public Hand(Mob mob)
+    public Hand(Mob mob, Entity entity)
     {
-        this.mob = mob;
+        this.Mob = mob;
+        this.Entity = entity;
+    }
+
+    public void Draw(PointF point) {
+        double distance = Mob.entity.Position.Distance(point);
+        double t = Distance / distance;
+
+        Entity.Move(Mob.entity.Position.LinearInterpolation(point, t));
+        Entity.Draw();
     }
 
     public void Click() {
-        entity.Interact(mob);
+        Entity.Interact(Mob);
     }
 }

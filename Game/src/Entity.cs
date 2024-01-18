@@ -27,7 +27,7 @@ public abstract class Entity
             return;
 
         this.mob.Life -= entity.damage;
-        this.cooldown = entity.damage > 0 && this.mob.Life > 0 ? 120 : 0;
+        this.cooldown = entity.damage > 0 && this.mob.Life > 0 ? 60 : 0;
         if (this.mob.Life <= 0)
             this.Destroy();
     }

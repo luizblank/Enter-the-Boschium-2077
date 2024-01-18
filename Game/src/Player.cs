@@ -83,6 +83,7 @@ public class Player : Mob
             else
                 direction = Direction.TopLeft;
         }
+
     }
 
     private void Move()
