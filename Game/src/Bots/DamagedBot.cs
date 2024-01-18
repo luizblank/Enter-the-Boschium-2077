@@ -17,10 +17,7 @@ public class DamagedBot : Bot
     public override void Set(Entity entity)
     {
         base.Set(entity);
-        rectangle = new Rectangle(
-            (int)this.entity.Position.X - 100,
-            (int)this.entity.Position.Y - 100,
-            200, 200);
+
     }
 
     public override void OnFrame(Player player)
@@ -28,43 +25,43 @@ public class DamagedBot : Bot
         if (player.Life > 0 && this.entity.Position.Distance(player.entity.Position) < 1000)
         {
             isMoving = true;
-            verifyPosition(player.entity.Position.X, player.entity.Position.Y);
+            verifyPosition();
             nextPosition = player.entity.Position;
-
-            this.entity.Move(new PointF(
-                (1 - speed) * this.entity.Position.X + speed * nextPosition.X,
-                (1 - speed) * this.entity.Position.Y + speed * nextPosition.Y
-            ));
         }
         else
         {
+            rectangle = new Rectangle(
+                (int)this.entity.Position.X - 200,
+                (int)this.entity.Position.Y - 200,
+                400, 400);
             isMoving = true;
-            verifyPosition(nextPosition.X, nextPosition.Y);
+            verifyPosition();
 
-            if (nextPosition != PointF.Empty && this.entity.Position.Distance(nextPosition) < 5)
+            if (nextPosition == PointF.Empty || this.entity.Position.Distance(nextPosition) < 100)
                 nextPosition = new PointF(
-                    Random.Shared.Next(rectangle.X, rectangle.X + rectangle.Width), 
+                    Random.Shared.Next(rectangle.X, rectangle.X + rectangle.Width),
                     Random.Shared.Next(rectangle.Y, rectangle.Y + rectangle.Height)
                 );
-            this.entity.Move(new PointF(
-                (1 - speed) * this.entity.Position.X + speed * nextPosition.X,
-                (1 - speed) * this.entity.Position.Y + speed * nextPosition.Y
-            ));
         }
+        this.entity.Move(
+            this.entity.Position.LinearInterpolation(
+                nextPosition,
+                speed)
+        );
     }
 
-    public void verifyPosition(float PlayerX, float PlayerY)
+    public void verifyPosition()
     {
-        if (this.entity.Position.Y > PlayerY)
+        if (this.entity.Position.Y > nextPosition.Y)
         {
-            if (this.entity.Position.X > PlayerX)
+            if (this.entity.Position.X > nextPosition.X)
                 direction = Direction.TopLeft;
             else
                 direction = Direction.TopRight;
         }
         else
         {
-            if (this.entity.Position.X > PlayerX)
+            if (this.entity.Position.X > nextPosition.X)
                 direction = Direction.BottomLeft;
             else
                 direction = Direction.BottomRight;
