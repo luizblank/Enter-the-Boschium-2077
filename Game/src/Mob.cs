@@ -5,7 +5,7 @@ using System.Windows.Forms;
 public abstract class Mob
 {
     public Entity entity { get; private set; } = null;
-    public List<Hand> hands { get; set; }
+    public List<Hand> hands { get; set; } = new List<Hand>();
     
     public float MaxLife;
     public float Life;
