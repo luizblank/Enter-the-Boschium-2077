@@ -7,7 +7,7 @@ public class Game : App
     public Player player = null;
     public Bot bot = null;
     private Entity camOn = null;
-
+    
     public override void Open()
     {
         GUI.Size = new Size(bmp.Width, bmp.Height);
@@ -46,6 +46,7 @@ public class Game : App
 
     public override void OnFrame()
     {
+        
         camOn.CamOnEntity();
 
         player.OnFrame();
