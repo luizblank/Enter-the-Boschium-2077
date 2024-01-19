@@ -17,6 +17,6 @@ public class RevolverEntity : Entity
         };
         this.Hitbox = new Hitbox(rectangles);
 
-        this.Size = new SizeF(500, 500);
+        this.Size = new SizeF(80, 80);
     }
 }

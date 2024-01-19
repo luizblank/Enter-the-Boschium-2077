@@ -8,6 +8,7 @@ public class Player : Mob
     public Direction direction = Direction.BottomLeft;
     public Walk WalkX = Walk.Stop;
     public Walk WalkY = Walk.Stop;
+    public MouseEventArgs mouse = null;
 
     public override void OnDestroy()
     {
@@ -24,6 +25,14 @@ public class Player : Mob
             this.entity.AddWalkingAnimation(spriteLocal, direction);
         else
             this.entity.AddStaticAnimation(spriteLocal, direction);
+
+        if(mouse == null)
+            return;
+
+        foreach (var hand in hands)
+        {
+            hand.Draw(mouse.Location);
+        }
     }
 
     public override void OnKeyDown(object o, KeyEventArgs e)
@@ -72,6 +81,8 @@ public class Player : Mob
 
     public override void OnMouseMove(object o, MouseEventArgs e)
     {
+        mouse = e;
+
         if (e.Location.Y > this.entity.RelativePosition().Y) {
             if (e.Location.X > this.entity.RelativePosition().X)
                 direction = Direction.BottomRight;
@@ -83,7 +94,6 @@ public class Player : Mob
             else
                 direction = Direction.TopLeft;
         }
-
     }
 
     private void Move()

@@ -64,7 +64,7 @@ public class Game : App
                 entity.Draw();
         }
         GUI.Draw();
-        player.hands[0].Draw(cursor);
+        // player.hands[0].Draw(cursor);
     }
 
     public override void OnKeyDown(object o, KeyEventArgs e)
