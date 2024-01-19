@@ -39,7 +39,7 @@ public abstract class Entity
     public virtual void Draw()
     {
         this.Animation.Draw(g, Position, Size);
-        this.Hitbox.Draw(g, Position);
+        // this.Hitbox.Draw(g, Position);
         Animation = Animation.NextFrame();
     }
 }
